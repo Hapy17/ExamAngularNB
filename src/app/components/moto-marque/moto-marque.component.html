@@ -1,54 +1,17 @@
-<div class="container d-flex">
-   <div class="row">
-       
-       <div class="col-3">
-           <div class="card  mt-4" >
-               <img style="size: cover;" class="card-img-top" src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/6c/Logo-KTM.svg/langfr-1920px-Logo-KTM.svg.png" alt="Logo-KTM" >
-               <div class="card-body">
-                 <h5 class="card-title">KTM</h5>
-                 <a (click)="getMotoByMarque('ktm')" class="btn btn-primary">Afficher les motos</a>
-               </div>
-           </div>
-       </div>
-       
-       <div class="col-3">
-           <div class="card  mt-4" >
-               <img style="size: cover;" class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Yamaha_logo.svg/langfr-1920px-Yamaha_logo.svg.png" alt="Logo-Yamaha">
-               <div class="card-body">
-                 <h5 class="card-title">Yamaha</h5>
-                 <a (click)="getMotoByMarque('yamaha')" class="btn btn-primary">Afficher les motos</a>
-               </div>
-           </div>
-       </div>
-       
-       <div class="col-3">
-           <div class="card  mt-4" >
-               <img style="size: cover;" class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Kawasaki_Heavy_Industries_Logo.svg/langfr-1920px-Kawasaki_Heavy_Industries_Logo.svg.png" alt="Logo-Kawasaki">
-               <div class="card-body">
-                 <h5 class="card-title">Kawasaki</h5>
-                 <a (click)="getMotoByMarque('kawasaki')" class="btn btn-primary">Afficher les motos</a>
-               </div>
-           </div>
-       </div>
-       
-       <div class="col-3">
-           <div class="card  mt-4" >
-               <img style="size: cover;" class="card-img-top" src="https://upload.wikimedia.org/wikipedia/fr/thumb/b/b2/Harley-Davidson.svg/langfr-800px-Harley-Davidson.svg.png" alt="Logo-Harley">
-               <div class="card-body">
-                 <h5 class="card-title">Harley-Davidson</h5>
-                 <a (click)="getMotoByMarque('Harley Davidson')" class="btn btn-primary">Afficher les motos</a>
-               </div>
-           </div>
-       </div>
+<div class="container d-flex">  
 
-   </div>
+    <div class="row mx-auto mt-3">
 
-    
+        <div class="col-3"><button (click)="getMotoByMarque('KTM')" class="btn btn-outline-primary" style="width:100%">KTM</button></div>
+        <div class="col-3"><button (click)="getMotoByMarque('Yamaha')" class="btn btn-outline-primary" style="width:100%">Yamaha</button></div>
+        <div class="col-3"><button (click)="getMotoByMarque('Kawasaki')" class="btn btn-outline-primary" style="width:100%">Kawasaki</button></div>
+        <div class="col-3"><button (click)="getMotoByMarque('Harley Davidson')" class="btn btn-outline-primary" style="width:100%">Harley-Davidson</button></div>
+    </div>
 </div>
 
 <div *ngIf="display == 'true'" class="container">
 
-    <table class="table table-striped table-hover table-borderless mt-5">
+    <table class="table table-striped table-hover table-borderless mt-5 table-dark">
       <thead>
         <tr>
           <th scope="col">Nom</th>
@@ -67,7 +30,7 @@
         <tr *ngFor="let moto of motoTable">
   
           <th scope="row">{{moto.nom}}</th>
-          <td class="td-image"><img style="max-height: 75px; max-width: 75px; z-index: 20; opacity: 1;"
+          <td class="td-image"><img style="max-height: 75px; max-width: 75px;"
               src="{{moto.image}}" alt="Portrait de la moto"></td>
           <td>{{moto.marque}}</td>
           <td>{{moto.type}}</td>
@@ -83,8 +46,7 @@
           <td>{{moto.kilometres}}</td>
           <td>
             <div class="d-flex flex-column">
-              <button [routerLink]="['/'+moto.id]" class="btn btn-success" style="z-index: 20; opacity: 1;">En
-                détail</button>
+              <button [routerLink]="['/'+moto.id]" class="btn btn-outline-success">En savoir +</button>
             </div>
           </td>
         </tr>
@@ -96,7 +58,7 @@
 <div class="container">
     <div class="row">
       <div class="col-md-4 col-md-offset-6 mt-4">
-        <button type="button" class="btn btn-warning" [routerLink]="['/']">Retour à la page d'accueil</button>
+        <button type="button" class="btn btn-outline-info" [routerLink]="['/']">Retour à la page d'accueil</button>
       </div>
     </div>
 </div>

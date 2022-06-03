@@ -9,14 +9,20 @@ import { MotoService } from 'src/app/services/moto.service';
 })
 export class MotosPharesComponent implements OnInit {
 
-  listeMotosPhares? : Moto[] ;
+
+  motoPhares: Moto[] = [];
 
   constructor(private motoService : MotoService) { }
 
   ngOnInit(): void {
     this.motoService.getMotosPhares().subscribe(data => {
-      this.listeMotosPhares = data;
+      data.forEach(moto => {
+        if (moto.venteFlash) {
+          this.motoPhares.push(moto)
+        }
+      });
     })
-  }
-
+    console.log(this.motoPhares)  
+  } 
+    
 }

@@ -2,19 +2,19 @@
 
   <div class="row justify-content-center">
       <div class="col-5">
-          <div class="card">
+          <div class="card mt-3">
             <img [src]="moto.image" class="card-img-top" [alt]="moto.image">
                 <div class="card-body">
                     <h5 class="card-title"> {{moto.nom}} </h5>
-                    <p class="card-text"> prix : {{moto.prix}} <br>
-                    Type : {{moto.type}} <br>
-                    Marque : {{moto.marque}}<br>
-                    Cylindrée : {{moto.cylindree}} <br>
+                    <p class="card-text"> Prix : {{moto.prix | number:'0.2-2'}} €<br>
+                    Type : {{moto.type | titlecase}}  <br>
+                    Marque : {{moto.marque | uppercase}}<br>
+                    Cylindrée : {{moto.cylindree}} c<sup>3</sup> <br>
                     Année : {{moto.annee}}<br>
-                    Kilomètrage : {{moto.kilometres}}<br>
+                    Kilomètrage : {{moto.kilometres}} kms<br>
                     
                     </p>
-                    <button [routerLink]="['/']" class="btn btn-secondary mx-auto">Revenir en arrière</button>
+                    <button [routerLink]="['/']" class="btn btn-outline-dark mx-auto">Revenir en arrière</button>
                 </div>
           </div>
       </div>

@@ -2,19 +2,14 @@
 
 
     <div class="row mt-3" >
-        <div class="col-6 mb-3 " *ngFor="let moto of listeMotosPhares" >
-            <div *ngIf="moto.venteFlash == true" class="card d-flex">
+        <div class="col-sm-6 col-lg-3 mb-3 " *ngFor="let moto of motoPhares" >
+            <div *ngIf="moto.venteFlash == true" class="card d-flex shadow">
                 <img [src]="moto.image" class="card-img-top" [alt]="moto.image">
                 <div class="card-body">
                     <h5 class="card-title"> {{moto.nom}} </h5>
-                    <p class="card-text"> prix : {{moto.prix}} <br>
-                    Type : {{moto.type}} <br>
-                    Marque : {{moto.marque}}<br>
-                    Cylindrée : {{moto.cylindree}} <br>
-                    Année : {{moto.annee}}<br>
-                    Kilomètrage : {{moto.kilometres}}<br>
+                    <p class="card-text"> Prix : {{moto.prix | number:'0.2-2'}} €<br>                 
                     </p>
-                    <button [routerLink]="['/',moto.id]" class="btn btn-success mb-1 ">Voir en détail</button>
+                    <button [routerLink]="['/',moto.id]" class="btn btn-outline-success mb-1 ">En savoir +</button>
                 </div>
             </div>
         </div>
