@@ -2,3 +2,12 @@
 body{
     background-color: #353535;
 }
+
+.card img{
+    height: 200px;
+    object-fit: cover;
+}
+
+.nav-brand{
+    height: 80px;
+}

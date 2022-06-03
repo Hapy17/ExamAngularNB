@@ -2,7 +2,7 @@
 
   <div class="row justify-content-center">
       <div class="col-5">
-          <div class="card mt-3">
+          <div class="card mt-3 text-white bg-dark">
             <img [src]="moto.image" class="card-img-top" [alt]="moto.image">
                 <div class="card-body">
                     <h5 class="card-title"> {{moto.nom}} </h5>
@@ -14,7 +14,7 @@
                     Kilomètrage : {{moto.kilometres}} kms<br>
                     
                     </p>
-                    <button [routerLink]="['/']" class="btn btn-outline-dark mx-auto">Revenir en arrière</button>
+                    <button [routerLink]="['/']" class="btn btn-outline-info mx-auto">Revenir en arrière</button>
                 </div>
           </div>
       </div>
